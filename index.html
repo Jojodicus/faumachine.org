@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="7;url=https://www.qemu.org/" />
+    <meta http-equiv="refresh" content="10;url=https://www.qemu.org/" />
     <title>FAUmachine.org</title>
     <style>
         body {
@@ -22,7 +22,7 @@
         }
         img {
             max-width: 100%;
-            height: auto;
+            height: 30em;
         }
         button {
             color: #e2e2e2;
@@ -46,7 +46,7 @@
     <div id="image-container">
         <h1>R.I.P FAUmachine 😭</h1>
         <p>
-        <img id="random-image" src="/" alt="Random Image">
+        <img id="random-image" src="/faumachine.png" alt="Random Image">
         </p>
         <button onClick="window.location.reload();">🫣 Refresh for another random meme!</button>
     </div>
@@ -69,7 +69,8 @@
         }
 
         const imgElement = document.getElementById('random-image');
-        imgElement.src += getRandomImage();
+        const imgDir = imgElement.src.substring(0, imgElement.src.lastIndexOf("\\") + 1);
+        imgElement.src = imgDir + getRandomImage();
     </script>
 
 </body>
